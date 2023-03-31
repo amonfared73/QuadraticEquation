@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuadraticEquation.WPF", "QuadraticEquation.WPF\QuadraticEquation.WPF.csproj", "{9707F76D-D925-4FBE-A825-D802FF15EAAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuadraticEquation.EntityFramework", "QuadraticEquation.EntityFramework\QuadraticEquation.EntityFramework.csproj", "{C794C5C4-36DD-4405-8F74-65EF66F30676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuadraticEquation.Domain", "QuadraticEquation.Domain\QuadraticEquation.Domain.csproj", "{013D4B74-ED69-4484-BE98-E390148B82CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9707F76D-D925-4FBE-A825-D802FF15EAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9707F76D-D925-4FBE-A825-D802FF15EAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9707F76D-D925-4FBE-A825-D802FF15EAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9707F76D-D925-4FBE-A825-D802FF15EAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C794C5C4-36DD-4405-8F74-65EF66F30676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C794C5C4-36DD-4405-8F74-65EF66F30676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C794C5C4-36DD-4405-8F74-65EF66F30676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C794C5C4-36DD-4405-8F74-65EF66F30676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013D4B74-ED69-4484-BE98-E390148B82CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013D4B74-ED69-4484-BE98-E390148B82CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013D4B74-ED69-4484-BE98-E390148B82CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013D4B74-ED69-4484-BE98-E390148B82CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC6AB02D-61BE-4845-A9A8-10FCDB19ED63}
+	EndGlobalSection
+EndGlobal

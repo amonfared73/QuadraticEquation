@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="QuadraticEquation.WPF.Components.QuadraticEquationListingItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuadraticEquation.WPF.Components"
+             xmlns:dropDown="clr-namespace:DropdownMenuControl;assembly=DropdownMenuControl"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:loadingspinnercontrol="clr-namespace:LoadingSpinnerControl;assembly=LoadingSpinnerControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel>
+            <TextBlock 
+            Grid.Column="0" 
+            Text="{Binding QaudraticEquationDisplay}" 
+            Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+            <TextBlock FontSize="8"  Text="{Binding ErrorMessage}" Foreground="Red" Visibility="{Binding HasErrorMessage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsDeleting}" Value="True">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <loadingspinnercontrol:LoadingSpinner Diameter="20" Thickness="2" IsLoading="True"/>
+            </Grid>
+            
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsDeleting}" Value="False">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                
+                <dropDown:DropdownMenu HorizontalAlignment="Right" x:Name="dropDown">
+                    <StackPanel MinWidth="125" Background="White">
+                        <StackPanel.Resources>
+                            <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignOutlinedButton}">
+                                <EventSetter Event="Click" Handler="Button_Click"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <Button Content="Edit" Command="{Binding EditCommand}"/>
+                        <Button Content="Delete" Command="{Binding DeleteCommand}" />
+                    </StackPanel>
+                </dropDown:DropdownMenu>
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
